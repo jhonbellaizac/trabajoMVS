@@ -4,6 +4,9 @@
  */
 package uniajc.model;
 
+import com.mysql.cj.jdbc.PreparedStatementWrapper;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 /**
  *
  * @author juana
@@ -28,5 +31,26 @@ public class Estudiante {
         this.edad = edad;
     }
     
+    public static void guardarEstudiante (Estudiante nuevoEstudiandte){
+        
+        Connection conexion =ConexionDatabase.getConnection();
+        String sql = "INSERT INTO estudiante (nombre, edad) VALUES ( ? , ?)";
+        
+        try (PreparedStatement statament = conexion.prepareStatement(sql)){
+            
+            statament.setString(1, nuevoEstudiandte.getNombre());
+            statament.setInt(2, nuevoEstudiandte.getEdad());
+            
+            System.out.println("SQL: " + sql);
+            
+            statament.executeUpdate();
+          
+            
+        }catch (Exception excepcion){
+            excepcion.printStackTrace();
+            
+        }
+        
+    }    
     
 }

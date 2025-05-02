@@ -20,12 +20,13 @@ public class ConexionDatabase {
     private static Connection conexion = null;
     
     public static Connection getConnection() {
+        
         if (conexion == null) {      
             try {
                 
                 Properties props = new Properties();
                 
-                props.load(new FileInputStream("db.properties"));
+                props.load(new FileInputStream("db.properties.properties"));
                 
                 String url = props.getProperty("db.url");
                 String user = props.getProperty("db.user");

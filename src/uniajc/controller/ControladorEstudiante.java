@@ -36,6 +36,11 @@ public class ControladorEstudiante {
         return modelo.getEdad();
     }
     
+    public void crearEstudiante (Estudiante nuevoEstudiante){
+        nuevoEstudiante.guardarEstudiante(nuevoEstudiante);
+        System.out.println("Nuevo estudiante guardado exitosamente!");
+    }
+    
     public void actualizarVista() {
         vista.mostrarDetallesEstudiante(modelo.getNombre(), modelo.getEdad());
     }
