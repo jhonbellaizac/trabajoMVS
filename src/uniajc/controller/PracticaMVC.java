@@ -33,8 +33,8 @@ public class PracticaMVC {
         // Crear controlador
         ControladorEstudiante controlador = new ControladorEstudiante(estudiante, vista);
         Estudiante nuevoEstudiante = new Estudiante ();
-        nuevoEstudiante.setNombre("jose gabril");
-        nuevoEstudiante.setEdad(45);
+        nuevoEstudiante.setNombre("jose arturo");
+        nuevoEstudiante.setEdad(20);
         
         controlador.crearEstudiante(nuevoEstudiante);
 
