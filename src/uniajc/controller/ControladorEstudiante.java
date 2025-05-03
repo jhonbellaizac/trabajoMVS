@@ -4,6 +4,7 @@
  */
 package uniajc.controller;
 
+import java.util.List;
 import uniajc.model.Estudiante;
 import uniajc.view.VistaEstudiante;
 
@@ -39,6 +40,11 @@ public class ControladorEstudiante {
     public void crearEstudiante(Estudiante nuevoEstudiante) {
         nuevoEstudiante.guardarEstudiante(nuevoEstudiante);
         System.out.println("Nuevo estudiante guardado exitosamente!");
+    }
+    
+    public void ListarEstudiante(){
+        List<Estudiante> estudiantes = Estudiante.consultarTodos();
+        vista.mostrarTodosLosEstudiantes(estudiantes);
     }
     
     // CRUD - Practica en casa
