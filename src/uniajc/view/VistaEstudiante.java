@@ -4,6 +4,9 @@
  */
 package uniajc.view;
 
+import java.util.List;
+import uniajc.model.Estudiante;
+
 /**
  *
  * @author juana
@@ -15,4 +18,10 @@ public class VistaEstudiante {
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
     }
+    
+   public void mostrarTodosLosEstudiantes(List<Estudiante>estudiantes) {
+    for (Estudiante e : estudiantes) {
+        System.out.println("Nombre: " + e.getNombre() + ", Edad: " + e.getEdad());
+    }
+}
 }

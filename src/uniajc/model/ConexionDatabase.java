@@ -27,9 +27,9 @@ public class ConexionDatabase {
                 
                 props.load(new FileInputStream("db.properties"));
                 
-                String url = props.getProperty("db.url");
-                String user = props.getProperty("db.user");
-                String password = props.getProperty("db.password");
+                String url = props.getProperty("url");
+                String user = props.getProperty("usuario");
+                String password = props.getProperty("contraseña");
 
                 conexion = DriverManager.getConnection(url, user, password);
                 System.out.println("Conexion exitosa!");
