@@ -6,6 +6,8 @@ package uniajc.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -55,9 +57,9 @@ public class Estudiante {
     }
     
     // CRUD - Practica en casa
-    // 1. Crear metodo consultar todos los estudiantes // SELECT
+    // CAMILO -> 1. Crear metodo consultar todos los estudiantes // SELECT
     // 2. Crear metodo consultar estudiante por id // SELECT
     // 3. Elimnar un estudiante por id // DELETE
-    // 4. Actualizar nombre de estudiante por id // UPDATE
+    // 4. Actualizar datos del estudiante por id // UPDATE
     
 }
