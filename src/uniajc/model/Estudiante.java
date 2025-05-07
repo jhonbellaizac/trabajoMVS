@@ -56,10 +56,35 @@ public class Estudiante {
         
     }
     
+    public static List<Estudiante> consultarTodos() {
+        List<Estudiante> lista = new ArrayList<>();
+
+        String sql = "SELECT nombre, edad FROM estudiante";
+
+        try (Connection conexion = ConexionDatabase.getConnection();
+             Statement stmt = conexion.createStatement();
+             ResultSet resultado = stmt.executeQuery(sql)) {
+
+            while (resultado.next()) {
+                Estudiante estudiante = new Estudiante();
+                estudiante.setNombre(resultado.getString("nombre"));
+                estudiante.setEdad(resultado.getInt("edad"));
+                lista.add(estudiante);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error al consultar estudiantes: " + e.getMessage());
+        }
+
+        return lista;
+    }
+}
+    
+    
+    
     // CRUD - Practica en casa
     // CAMILO -> 1. Crear metodo consultar todos los estudiantes // SELECT
     // 2. Crear metodo consultar estudiante por id // SELECT
     // 3. Elimnar un estudiante por id // DELETE
     // 4. Actualizar datos del estudiante por id // UPDATE
     
-}

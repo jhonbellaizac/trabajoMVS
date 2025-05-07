@@ -45,6 +45,8 @@ public class PracticaMVC {
         
         // Actualizar la vista
         controlador.actualizarVista();
+        
+        controlador.ListarEstudiante();
     }
-    
+  
 }
