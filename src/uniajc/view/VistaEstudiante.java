@@ -19,7 +19,7 @@ public class VistaEstudiante {
         System.out.println("Edad: " + edad);
     }
     
-   public void mostrarTodosLosEstudiantes(List<Estudiante>estudiantes) {
+   public void mostrarTodosLosEstudiantes(List<Estudiante> estudiantes) {
     for (Estudiante e : estudiantes) {
         System.out.println("Nombre: " + e.getNombre() + ", Edad: " + e.getEdad());
     }

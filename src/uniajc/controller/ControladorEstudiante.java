@@ -37,23 +37,22 @@ public class ControladorEstudiante {
         return modelo.getEdad();
     }
     
-    public void crearEstudiante(Estudiante nuevoEstudiante) {
-        nuevoEstudiante.guardarEstudiante(nuevoEstudiante);
-        System.out.println("Nuevo estudiante guardado exitosamente!");
+    public void crearEstudiante(Estudiante nuevoEstudiante){
+        nuevoEstudiante.insertarEstudiante(nuevoEstudiante);
+        System.out.println("Estudiante creado correctamente!");
     }
     
-    public void ListarEstudiante(){
-        List<Estudiante> estudiantes = Estudiante.consultarTodos();
-        vista.mostrarTodosLosEstudiantes(estudiantes);
+    public List<Estudiante> obtenerEstudiantes() {
+        return modelo.obtenerTodosLosEstudiantes();
     }
     
-    // CRUD - Practica en casa
-    // 1. Crear metodo consultar todos los estudiantes // SELECT
-    // 2. Crear metodo consultar estudiante por id // SELECT
-    // 3. Elimnar un estudiante por id // DELETE
-    // 4. Actualizar nombre de estudiante por id // UPDATE
+    public void removerEstudiante(int id){
+        modelo.deleteEstudiante(id);
+        System.out.println("Estudiante con id " + id + " eliminado correctamente!");
+    }
     
-    public void actualizarVista() {
-        vista.mostrarDetallesEstudiante(modelo.getNombre(), modelo.getEdad());
+    public void actualizarEstudiante(Estudiante estudiante){
+        modelo.updateEstudiante(estudiante);
+        System.out.println("Estudiante actualizado correctamente!");
     }
 }

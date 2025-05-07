@@ -4,6 +4,7 @@
  */
 package uniajc.controller;
 
+import java.util.List;
 import uniajc.model.ConexionDatabase;
 import uniajc.model.Estudiante;
 import uniajc.view.VistaEstudiante;
@@ -19,34 +20,26 @@ public class PracticaMVC {
      */
     public static void main(String[] args) {
            
-        // Crear modelo
+        // Inicializamos el modelo creando un nuevo estudiante
         Estudiante estudiante = new Estudiante();
-        estudiante.setNombre("Ana");
-        estudiante.setEdad(21);
-        
-         // Crear vista
+
+        // Inicializamos la vista
         VistaEstudiante vista = new VistaEstudiante();
-        
-        // Crear controlador
+
         ControladorEstudiante controlador = new ControladorEstudiante(estudiante, vista);
 
-        Estudiante nuevoEstudiante = new Estudiante();
-        nuevoEstudiante.setNombre("Jose Maria");
-        nuevoEstudiante.setEdad(45);
-        
-        controlador.crearEstudiante(nuevoEstudiante);
-        
-        // Mostrar datos iniciales
-        controlador.actualizarVista();
-        
-        // Modificar datos a través del controlador
-        controlador.setNombreEstudiante("Carlos");
-        controlador.setEdadEstudiante(23);
-        
-        // Actualizar la vista
-        controlador.actualizarVista();
-        
-        controlador.ListarEstudiante();
+        // estudiante.setId(44);
+        estudiante.setNombre("Carlos-SP");
+        estudiante.setEdad(21);
+
+        controlador.crearEstudiante(estudiante);
+        // controlador.removerEstudiante(40);
+        // controlador.removerEstudiante(43);
+        //controlador.actualizarEstudiante(estudiante);
+
+        List<Estudiante> estudiantes = controlador.obtenerEstudiantes();
+
+        vista.mostrarTodosLosEstudiantes(estudiantes);
     }
   
 }
