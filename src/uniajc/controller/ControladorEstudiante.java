@@ -4,6 +4,7 @@
  */
 package uniajc.controller;
 
+import java.util.List;
 import uniajc.model.Estudiante;
 import uniajc.view.VistaEstudiante;
 
@@ -43,5 +44,23 @@ public class ControladorEstudiante {
     
     public void actualizarVista() {
         vista.mostrarDetallesEstudiante(modelo.getNombre(), modelo.getEdad());
+        
+    public void crearEstudiante(Estudiante nuevoEstudiante){
+        nuevoEstudiante.insertarEstudiante(nuevoEstudiante);
+        System.out.println("Estudiante creado correctamente!");
+    }
+    
+    public List<Estudiante> obtenerEstudiantes() {
+        return modelo.obtenerTodosLosEstudiantes();
+    }
+    
+    public void removerEstudiante(int id){
+        modelo.deleteEstudiante(id);
+        System.out.println("Estudiante con id " + id + " eliminado correctamente!");
+    }
+    
+    public void actualizarEstudiante(Estudiante estudiante){
+        modelo.updateEstudiante(estudiante);
+        System.out.println("Estudiante actualizado correctamente!");
     }
 }
