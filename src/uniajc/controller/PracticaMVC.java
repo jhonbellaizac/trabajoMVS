@@ -23,22 +23,22 @@ public class PracticaMVC {
     public static void main(String[] args) {
 
         // Inicializamos el modelo creando un nuevo estudiante
-        //Estudiante estudiante = new Estudiante();
-        // Inicializamos la vista
-        //VistaEstudiante vista = new VistaEstudiante();
-        //ControladorEstudiante controlador = new ControladorEstudiante(estudiante, vista);
-        // estudiante.setId(44);
-        //estudiante.setNombre("Carlos-SP");
-        //estudiante.setEdad(21);
-        //controlador.crearEstudiante(estudiante);
-        // controlador.removerEstudiante(40);
-        // controlador.removerEstudiante(43);
-        //controlador.actualizarEstudiante(estudiante);
-        //List<Estudiante> estudiantes = controlador.obtenerEstudiantes();
-        //vista.mostrarTodosLosEstudiantes(estudiantes);
         Estudiante estudiante = new Estudiante();
-        VistaEstudiante vista = new VistaEstudiante(); // opcional
+        // Inicializamos la vista
+        VistaEstudiante vista = new VistaEstudiante();
         ControladorEstudiante controlador = new ControladorEstudiante(estudiante, vista);
+         estudiante.setId(44);
+        estudiante.setNombre("Carlos-SP");
+        estudiante.setEdad(21);
+        controlador.crearEstudiante(estudiante);
+         controlador.removerEstudiante(40);
+        controlador.removerEstudiante(43);
+        controlador.actualizarEstudiante(estudiante);
+        List<Estudiante> estudiantes = controlador.obtenerEstudiantes();
+        vista.mostrarTodosLosEstudiantes(estudiantes);
+        //Estudiante estudiante = new Estudiante();
+        //VistaEstudiante vista = new VistaEstudiante(); // opcional
+        //ControladorEstudiante controlador = new ControladorEstudiante(estudiante, vista);
 
         SwingUtilities.invokeLater(() -> {
             new VistaEstudianteGUI(controlador);
